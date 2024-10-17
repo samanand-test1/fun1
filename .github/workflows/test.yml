@@ -1,0 +1,23 @@
+name: Status Check
+
+on:
+  pull_request:
+    branches:
+      - main  # Adjust to your target branch
+
+jobs:
+  delayed-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Check out the repository code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Run the delay (sleep for 5 minutes)
+    - name: Delay for 3 minutes
+      run: sleep 180  # 180 seconds = 3 minutes
+
+    # Run a simple status check (replace this with actual tests or commands)
+    - name: Run status check
+      run: echo "Status check complete after 3-minute delay."
